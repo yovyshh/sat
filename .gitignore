@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+sat_env/
+venv/
+.venv/
+env/
+
+# Datasets (large files)
+EuroSAT/
+EuroSAT.zip
+
+# Model weights
+*.pth
+*.pt
+*.bin
+*.h5
+
+# OS files
+.DS_Store
+Thumbs.db
