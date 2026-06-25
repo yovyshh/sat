@@ -1,38 +1,40 @@
 # 🛰️ Satellite Image Classifier & Deforestation Detector
 
-This project is a deep learning-based tool that uses PyTorch to train a ResNet-50 classifier on the EuroSAT dataset to detect various types of land cover and identify segments of deforestation. A Streamlit web application provides an interactive dashboard where users can upload "Before" and "After" satellite images to run the deforestation detection engine and visualize results.
+An end-to-end deep learning project built to classify land cover types and monitor regional deforestation trends using Sentinel-2 satellite imagery.
 
-## 🚀 Features
-
-- **Model Training**: A custom training pipeline (`train_classifier.py`) built on `resnet50` with fine-tuning, data augmentation, test evaluation, and confusion matrix visualization.
-- **Interactive UI**: A Streamlit dashboard (`app.py`) to upload side-by-side temporal images and run patch-by-patch forest cover change analysis.
-- **Diagnostics**: An expandable diagnostic log directly in the UI to see the raw classification predictions for both scenes.
+## 🚀 Technical Architecture
+* **Model Engine:** PyTorch transfer learning via a customized `ResNet50` pipeline.
+* **Optimization:** Fine-tuned cross-entropy classification reaching **98% test accuracy** locally on an NVIDIA RTX 5070.
+* **Frontend:** Interactive web application dashboard deployed via `Streamlit`.
 
 ## 📂 Project Structure
-
 - `app.py`: Streamlit application file.
 - `train_classifier.py`: Script to train the PyTorch model on the EuroSAT dataset.
 - `confusion_matrix.png`: Model evaluation visual (generated after training).
 - `requirements.txt`: Python package requirements.
 - `.gitignore`: Standard rules to exclude virtual environments, datasets, and large weights from version control.
 
-## 🛠️ Installation & Setup
+## 📦 Project Setup & Installation
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/yovyshh/sat.git
    cd sat
    ```
 
-2. **Set up a Virtual Environment**:
+2. **Create your virtual environment**:
    ```bash
    python -m venv sat_env
    sat_env\Scripts\activate
    ```
 
-3. **Install Dependencies**:
+3. **Install Requirements**:
    ```bash
    pip install -r requirements.txt
+   ```
+   Or install them manually:
+   ```bash
+   pip install torch torchvision scikit-learn streamlit matplotlib seaborn pillow
    ```
 
 4. **Prepare the Dataset**:
